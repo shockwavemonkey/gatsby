@@ -3,7 +3,7 @@ import Head from "next/head";
 import fetch from "node-fetch";
 
 export async function getStaticProps() {
-  const data: BlockMapType = await fetch(
+  const data = await fetch(
     "https://notion-api.precisionmining.workers.dev/v1/page/Path-Annotation-Script-9378e8e911db48f383bd42fee67acd0b"
   ).then(res => res.json());
 
