@@ -1,6 +1,7 @@
 import { NotionRenderer, BlockMapType } from "react-notion";
-import Head from "next/head";
 import fetch from "node-fetch";
+import "react-notion/src/styles.css";
+import "prismjs/themes/prism-tomorrow.css";
 
 export async function getStaticProps() {
   const data = await fetch(
@@ -14,20 +15,8 @@ export async function getStaticProps() {
   };
 }
 
-const Home = ({ blockMap }) => (
-  <div
-    style={{
-      maxWidth: 708,
-      margin: "0 auto",
-      padding: "0 8px",
-      fontFamily: `-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"`
-    }}
-  >
-    <Head>
-      <title>react-notion example</title>
-    </Head>
+export default ({ blockMap }) => (
+  <div style={{ maxWidth: 768 }}>
     <NotionRenderer blockMap={blockMap} />
   </div>
 );
-
-export default Home;
