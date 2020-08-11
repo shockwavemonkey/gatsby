@@ -2,6 +2,7 @@ import { NotionRenderer, BlockMapType } from "react-notion";
 import fetch from "node-fetch";
 import "react-notion/src/styles.css";
 import "prismjs/themes/prism-tomorrow.css";
+import React from "react"
 
 export async function getStaticProps() {
   const data = await fetch(
